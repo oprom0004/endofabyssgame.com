@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  body {
+    @apply bg-abyss-void text-slate-100 font-sans selection:bg-abyss-cyan selection:text-black;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #04070C;
+}
+::-webkit-scrollbar-thumb {
+  background: #1E2D44;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00F0FF;
+}
+
+/* Sci-fi HUD Card */
+.hud-card {
+  background: rgba(14, 23, 38, 0.85);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 45, 68, 0.8);
+}
+
+.hud-card-hover {
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.hud-card-hover:hover {
+  border-color: rgba(0, 240, 255, 0.6);
+  box-shadow: 0 0 25px -5px rgba(0, 240, 255, 0.25);
+  transform: translateY(-2px);
+}

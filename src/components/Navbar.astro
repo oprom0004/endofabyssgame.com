@@ -1,0 +1,117 @@
+---
+const navLinks = [
+  { href: '/', label: 'Overview' },
+  { href: '/steam/', label: 'Steam & PC Status' },
+  { href: '/walkthrough/', label: 'Walkthrough & Bosses' },
+  { href: '/ending-explained/', label: 'Ending Explained' },
+  { href: '/platforms/', label: 'Platforms & Switch 2' },
+  { href: '/coop/', label: 'Co-op FAQ' },
+];
+
+const currentPath = Astro.url.pathname;
+---
+
+<header class="sticky top-0 z-50 border-b border-abyss-border/80 bg-abyss-void/90 backdrop-blur-md">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex items-center justify-between h-16">
+      
+      <!-- Brand Logo -->
+      <a href="/" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-lg bg-abyss-cyan/10 border border-abyss-cyan/40 flex items-center justify-center group-hover:border-abyss-cyan group-hover:shadow-glow-cyan transition-all duration-300">
+          <svg class="w-5 h-5 text-abyss-cyan group-hover:scale-110 transition-transform" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <polygon points="12,2 22,8 22,16 12,22 2,16 2,8" />
+            <circle cx="12" cy="12" r="3" fill="currentColor" />
+          </svg>
+        </div>
+        <div class="flex flex-col">
+          <span class="font-extrabold text-base tracking-wider text-white font-mono flex items-center gap-1.5 uppercase">
+            End Of <span class="text-abyss-cyan">Abyss</span>
+            <span class="text-[9px] px-1.5 py-0.5 rounded bg-abyss-cyan/20 text-abyss-cyan border border-abyss-cyan/40 font-bold">GAME HUB</span>
+          </span>
+          <span class="text-[10px] font-mono text-abyss-muted tracking-widest uppercase">Section 9 Community Guide</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden lg:flex items-center gap-1">
+        {navLinks.map((link) => {
+          const isActive = currentPath === link.href || (link.href !== '/' && currentPath.startsWith(link.href));
+          return (
+            <a
+              href={link.href}
+              class={`px-3 py-1.5 rounded-md text-xs font-mono font-medium transition-all ${
+                isActive
+                  ? 'bg-abyss-cyan/15 text-abyss-cyan border border-abyss-cyan/40 shadow-glow-cyan'
+                  : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+              }`}
+            >
+              {link.label}
+            </a>
+          );
+        })}
+      </nav>
+
+      <!-- Action Button -->
+      <div class="hidden sm:flex items-center gap-3">
+        <a
+          href="/steam/"
+          class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-lg bg-gradient-to-r from-abyss-cyan to-blue-600 text-black text-xs font-bold font-mono uppercase tracking-wider hover:opacity-90 shadow-glow-cyan transition-all"
+        >
+          <span>🎮</span>
+          <span>Steam Tracker</span>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        id="mobile-menu-btn"
+        type="button"
+        class="lg:hidden p-2 rounded-md text-slate-400 hover:text-white hover:bg-slate-800/80 focus:outline-none"
+        aria-label="Toggle Navigation"
+      >
+        <svg id="menu-icon-open" class="w-6 h-6 block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+        <svg id="menu-icon-close" class="w-6 h-6 hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+        </svg>
+      </button>
+
+    </div>
+
+    <!-- Mobile Nav Dropdown -->
+    <div id="mobile-menu" class="hidden lg:hidden border-t border-abyss-border/60 py-3 space-y-1">
+      {navLinks.map((link) => {
+        const isActive = currentPath === link.href;
+        return (
+          <a
+            href={link.href}
+            class={`block px-3 py-2 rounded-md text-sm font-mono font-medium ${
+              isActive
+                ? 'bg-abyss-cyan/15 text-abyss-cyan font-bold'
+                : 'text-slate-300 hover:text-white hover:bg-slate-800/60'
+            }`}
+          >
+            {link.label}
+          </a>
+        );
+      })}
+    </div>
+
+  </div>
+</header>
+
+<script>
+  const btn = document.getElementById('mobile-menu-btn');
+  const menu = document.getElementById('mobile-menu');
+  const iconOpen = document.getElementById('menu-icon-open');
+  const iconClose = document.getElementById('menu-icon-close');
+
+  if (btn && menu && iconOpen && iconClose) {
+    btn.addEventListener('click', () => {
+      menu.classList.toggle('hidden');
+      iconOpen.classList.toggle('hidden');
+      iconClose.classList.toggle('hidden');
+    });
+  }
+</script>

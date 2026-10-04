@@ -1,0 +1,46 @@
+---
+import { WEAPONS_ARSENAL } from '../data/gameInfo';
+---
+
+<section class="space-y-6" id="weapons">
+  <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-4 border-b border-abyss-border pb-4">
+    <div>
+      <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-abyss-cyan/15 border border-abyss-cyan/30 text-abyss-cyan text-xs font-mono font-bold uppercase mb-2">
+        <span>🔫</span>
+        <span>Combat Technician Armory</span>
+      </div>
+      <h2 class="text-2xl sm:text-3xl font-black text-white font-mono tracking-tight">
+        Cel's Exosuit Weapon Loadout
+      </h2>
+      <p class="text-xs sm:text-sm text-abyss-muted">
+        Upgrade firearms and specialized munitions to pierce heavy chitin and synthetic bio-armor.
+      </p>
+    </div>
+  </div>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+    {WEAPONS_ARSENAL.map((w) => (
+      <div class="hud-card hud-card-hover rounded-xl p-5 border border-abyss-border space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-sm font-bold text-white font-mono">{w.name}</span>
+          <span class="text-[10px] font-mono px-2 py-0.5 rounded bg-abyss-card border border-abyss-border text-abyss-cyan">
+            {w.type}
+          </span>
+        </div>
+        <p class="text-xs text-abyss-muted leading-relaxed">
+          {w.description}
+        </p>
+        <div class="grid grid-cols-2 gap-2 pt-2 border-t border-abyss-border/60 text-[11px] font-mono">
+          <div>
+            <span class="text-slate-500">Ammo: </span>
+            <span class="text-slate-300">{w.ammoType}</span>
+          </div>
+          <div>
+            <span class="text-slate-500">Special: </span>
+            <span class="text-abyss-hazard">{w.specialAbility}</span>
+          </div>
+        </div>
+      </div>
+    ))}
+  </div>
+</section>

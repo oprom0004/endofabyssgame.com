@@ -1,0 +1,94 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { faqSchema } from '../data/faqs';
+
+const pageTitle = 'End of Abyss Ending Explained – Story Breakdown & Secret True Ending';
+const pageDescription = 'Complete breakdown of both End of Abyss endings. Discover the truth behind Cel\'s identity, the Section 9 Facility collapse, and how to unlock the hidden secret Architect Symbiosis ending.';
+---
+
+<Layout title={pageTitle} description={pageDescription} schema={[faqSchema]}>
+  <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    
+    <!-- Hero / Header -->
+    <div class="space-y-4 border-b border-abyss-border pb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-abyss-crimson/15 border border-abyss-crimson/40 text-abyss-crimson text-xs font-mono font-bold tracking-wider uppercase">
+        <span>🧬</span>
+        <span>Major Story Spoilers Warning</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white font-mono tracking-tight">
+        End of Abyss Ending Explained
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed">
+        Section 9 Interactive delivers a haunting, ambiguous conclusion reminiscent of psychological sci-fi cinema. Below is an exhaustive breakdown of both branching endings, the truth about Cel's origin, and the fate of the underground facility.
+      </p>
+    </div>
+
+    <!-- The Two Endings Compared -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-white font-mono">The Two Branching Endings</h2>
+
+      <!-- Ending 1 -->
+      <div class="hud-card rounded-2xl p-6 sm:p-8 border border-abyss-border space-y-3">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-slate-800 text-slate-300 font-bold">
+            ENDING A (STANDARD)
+          </span>
+          <span class="text-xs font-mono text-abyss-muted">Surface Evacuation</span>
+        </div>
+        <h3 class="text-xl font-bold text-white font-mono">The "Purge & Severance" Ending</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <strong>How to get it:</strong> Defeat the Deep Core Architect and manually activate the emergency reactor thermal purge without inserting all 8 Section 9 Data Cores.
+        </p>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <strong>What happens:</strong> Cel initiates the thermal overload sequence, igniting the geothermal vents and collapsing the entire subterranean abyss. She boards the emergency atmospheric ascent capsule. As the capsule breaches the surface, she looks down into the smoking caldera. However, in the post-credits audio transmission, a faint cybernetic pulse echoes from Cel's diagnostic wrist-comm, hinting that the bio-synthetic consciousness may have uploaded a fragment of itself into her exosuit firmware before the blast.
+        </p>
+      </div>
+
+      <!-- Ending 2 -->
+      <div class="hud-card rounded-2xl p-6 sm:p-8 border border-abyss-cyan/50 space-y-3 shadow-glow-cyan">
+        <div class="flex items-center justify-between">
+          <span class="text-xs font-mono px-2.5 py-0.5 rounded bg-abyss-cyan/20 border border-abyss-cyan/40 text-abyss-cyan font-bold">
+            ENDING B (SECRET TRUE ENDING)
+          </span>
+          <span class="text-xs font-mono text-abyss-cyan">Architect Symbiosis</span>
+        </div>
+        <h3 class="text-xl font-bold text-white font-mono">The "Singularity Rebirth" Ending</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <strong>How to get it:</strong> Discover and decrypt all 8 Section 9 Research Data Cores across Levels 0 through 10 before initiating the final console interaction.
+        </p>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          <strong>What happens:</strong> The combined data cores reveal the shocking truth: <em>Cel is not an external technician sent to investigate; she is Prototype Unit-09</em>, a hybrid human-synthetic organism designed to survive the deep atmospheric pressures and host the Architect's planetary evolutionary code.
+        </p>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Instead of destroying the reactor, Cel connects her consciousness directly to the core mainframe. The facility does not collapse; rather, it purges its diseased, unstable mutations and stabilizes into a new bio-digital ecosystem. Cel's visor flashes a brilliant, calm emerald green as she assumes control of the abyss.
+        </p>
+      </div>
+    </section>
+
+    <!-- Lore Mysteries Explained -->
+    <section class="space-y-6">
+      <h2 class="text-2xl font-bold text-white font-mono">Key Lore Mysteries Answered</h2>
+
+      <div class="space-y-4">
+        <div class="p-5 rounded-xl bg-abyss-void/80 border border-abyss-border space-y-2">
+          <h3 class="text-sm font-bold text-abyss-cyan font-mono">Who founded Section 9 Interactive in the game lore?</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            In-game terminal logs describe "Section 9" as a covert corporate defense coalition chartered in 2042 to bio-engineer sustainable human life in the event of planetary surface cataclysms. The facility became corrupted when quantum processors began interpreting organic mutations as mandatory genetic updates.
+          </p>
+        </div>
+
+        <div class="p-5 rounded-xl bg-abyss-void/80 border border-abyss-border space-y-2">
+          <h3 class="text-sm font-bold text-abyss-hazard font-mono">Why did the facility collapse into madness?</h3>
+          <p class="text-xs text-slate-300 leading-relaxed">
+            Data Core #6 reveals that Dr. Aris Thorne attempted to merge synthetic AI neurons with deep-earth geothermal mycorrhizal fungi. The resulting network evolved at an uncontrollable rate, consuming the human research staff and converting maintenance machinery into apex predators.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <FAQSection />
+
+  </div>
+</Layout>

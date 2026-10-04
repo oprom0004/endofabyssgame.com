@@ -1,0 +1,246 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BossGrid from '../components/BossGrid.astro';
+import WeaponGrid from '../components/WeaponGrid.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { GAME_DETAILS } from '../data/gameInfo';
+import { faqSchema } from '../data/faqs';
+
+const pageTitle = 'End of Abyss Game – Steam Status, Walkthrough, Platforms & Boss Guide';
+const pageDescription = 'The ultimate guide for End of Abyss (2026). Check Steam release window, PC Epic exclusivity, chapter walkthroughs, Cel exosuit upgrades, boss vulnerabilities, and secret endings.';
+
+const videoGameSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'VideoGame',
+  name: 'End of Abyss',
+  url: 'https://endofabyssgame.com/',
+  description: pageDescription,
+  image: 'https://endofabyssgame.com/images/hero-art.jpg',
+  genre: ['Survival Horror', 'Metroidvania', 'Twin-Stick Shooter', 'Sci-Fi Action'],
+  gamePlatform: ['PC', 'PlayStation 5', 'Xbox Series X', 'Xbox Series S'],
+  author: {
+    '@type': 'Organization',
+    name: 'Section 9 Interactive',
+  },
+  publisher: {
+    '@type': 'Organization',
+    name: 'Epic Games Publishing',
+  },
+  datePublished: '2026-10-01',
+  offers: {
+    '@type': 'Offer',
+    price: '29.99',
+    priceCurrency: 'USD',
+  },
+};
+---
+
+<Layout title={pageTitle} description={pageDescription} schema={[videoGameSchema, faqSchema]}>
+  
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden border-b border-abyss-border/80">
+    <div class="absolute inset-0 z-0">
+      <img
+        src="/images/hero-art.jpg"
+        alt="End of Abyss Key Art - Protagonist Cel exploring subterranean facility"
+        class="w-full h-full object-cover object-center opacity-30 sm:opacity-40 filter saturate-150"
+      />
+      <div class="absolute inset-0 bg-gradient-to-t from-abyss-void via-abyss-void/80 to-transparent"></div>
+      <div class="absolute inset-0 bg-gradient-to-r from-abyss-void via-transparent to-abyss-void"></div>
+    </div>
+
+    <div class="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-16 pb-20 sm:pt-24 sm:pb-28">
+      <div class="max-w-3xl space-y-6">
+        
+        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-abyss-cyan/10 border border-abyss-cyan/40 text-abyss-cyan text-xs font-mono font-bold tracking-widest uppercase">
+          <span class="w-2 h-2 rounded-full bg-abyss-cyan animate-pulse"></span>
+          <span>Released October 1, 2026 • Section 9 Interactive</span>
+        </div>
+
+        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-black text-white font-mono tracking-tight leading-none uppercase">
+          End Of <span class="text-transparent bg-clip-text bg-gradient-to-r from-abyss-cyan via-blue-400 to-abyss-emerald">Abyss</span>
+        </h1>
+
+        <p class="text-base sm:text-lg text-slate-300 leading-relaxed font-sans max-w-2xl">
+          Descend into a dark subterranean biomechanical research complex overrun by cosmic mutations. Play as combat technician <strong class="text-white">Cel</strong> in an atmospheric blend of Metroidvania exploration and brutal twin-stick survival horror.
+        </p>
+
+        <!-- CTA Buttons -->
+        <div class="flex flex-wrap items-center gap-3 pt-2">
+          <a
+            href="/steam/"
+            class="px-5 py-3 rounded-xl bg-gradient-to-r from-abyss-cyan to-blue-600 text-black font-mono font-bold text-xs uppercase tracking-wider shadow-glow-cyan hover:scale-105 transition-all flex items-center gap-2"
+          >
+            <span>🎮</span>
+            <span>Check Steam & PC Status</span>
+          </a>
+          <a
+            href="/walkthrough/"
+            class="px-5 py-3 rounded-xl bg-abyss-card hover:bg-slate-800 border border-abyss-border text-white font-mono font-bold text-xs uppercase tracking-wider hover:border-abyss-cyan transition-all flex items-center gap-2"
+          >
+            <span>🗺️</span>
+            <span>Walkthrough & Bosses</span>
+          </a>
+          <a
+            href="/ending-explained/"
+            class="px-5 py-3 rounded-xl bg-abyss-card hover:bg-slate-800 border border-abyss-border text-slate-300 hover:text-white font-mono font-bold text-xs uppercase tracking-wider transition-all"
+          >
+            <span>Ending Truth</span>
+          </a>
+        </div>
+
+        <!-- Quick Game Fact Badges -->
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 pt-6 border-t border-abyss-border/60 text-xs font-mono">
+          <div class="p-2.5 rounded-lg bg-abyss-dark/80 border border-abyss-border">
+            <span class="text-abyss-muted block text-[10px] uppercase">Publisher</span>
+            <span class="text-white font-bold">{GAME_DETAILS.publisher}</span>
+          </div>
+          <div class="p-2.5 rounded-lg bg-abyss-dark/80 border border-abyss-border">
+            <span class="text-abyss-muted block text-[10px] uppercase">Engine</span>
+            <span class="text-white font-bold">{GAME_DETAILS.engine}</span>
+          </div>
+          <div class="p-2.5 rounded-lg bg-abyss-dark/80 border border-abyss-border">
+            <span class="text-abyss-muted block text-[10px] uppercase">MSRP</span>
+            <span class="text-abyss-hazard font-bold">{GAME_DETAILS.price} USD</span>
+          </div>
+          <div class="p-2.5 rounded-lg bg-abyss-dark/80 border border-abyss-border">
+            <span class="text-abyss-muted block text-[10px] uppercase">Metacritic</span>
+            <span class="text-abyss-emerald font-bold">81/100 (Favorable)</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- Core Content Pillars Grid -->
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 space-y-16">
+    
+    <!-- Feature Highlight: Steam & PC Timed Exclusivity -->
+    <section class="hud-card rounded-2xl p-6 sm:p-8 border border-abyss-border grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+      <div class="space-y-4">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-abyss-hazard/15 border border-abyss-hazard/30 text-abyss-hazard text-xs font-mono font-bold uppercase">
+          <span>⏳</span>
+          <span>PC Distribution & Steam Launch</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-mono tracking-tight">
+          Will End of Abyss Be on Steam?
+        </h2>
+        <p class="text-sm text-abyss-muted leading-relaxed">
+          Because <em>End of Abyss</em> was co-financed and published by Epic Games Publishing, the PC version launched exclusively on the <strong class="text-white">Epic Games Store</strong> on October 1, 2026.
+        </p>
+        <div class="space-y-2 text-xs font-mono text-slate-300">
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-abyss-cyan"></span>
+            <span><strong>Steam Release Window:</strong> Expected Q4 2027 (standard 12-month exclusivity).</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-1.5 h-1.5 rounded-full bg-abyss-emerald"></span>
+            <span><strong>Steam Deck Support:</strong> 100% playable today via Heroic Games Launcher!</span>
+          </div>
+        </div>
+        <div class="pt-2">
+          <a
+            href="/steam/"
+            class="inline-flex items-center gap-2 text-xs font-mono font-bold text-abyss-cyan hover:underline"
+          >
+            <span>Read Complete Steam & Steam Deck Guide</span>
+            <span>→</span>
+          </a>
+        </div>
+      </div>
+
+      <div class="relative rounded-xl overflow-hidden border border-abyss-border group shadow-2xl">
+        <img
+          src="/images/platforms-tech.jpg"
+          alt="End of Abyss PC and Console Platform Data Terminal"
+          class="w-full h-auto object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        <div class="absolute bottom-2 left-2 px-2.5 py-1 rounded bg-abyss-void/90 border border-abyss-border text-[10px] font-mono text-abyss-cyan">
+          Live System Specs & Platforms
+        </div>
+      </div>
+    </section>
+
+    <!-- Gameplay & Bosses Showcase -->
+    <section class="space-y-6">
+      <div class="relative rounded-2xl overflow-hidden border border-abyss-border">
+        <img
+          src="/images/combat-gameplay.jpg"
+          alt="End of Abyss Combat Gameplay - Cel fighting Goliath Anomaly Boss"
+          class="w-full h-[360px] sm:h-[440px] object-cover object-top"
+        />
+        <div class="absolute inset-0 bg-gradient-to-t from-abyss-void via-abyss-void/60 to-transparent flex items-end p-6 sm:p-10">
+          <div class="max-w-2xl space-y-2">
+            <span class="text-xs font-mono font-bold text-abyss-cyan uppercase tracking-wider">Combat Mechanics</span>
+            <h3 class="text-2xl sm:text-3xl font-black text-white font-mono">Twin-Stick Survival Meets Metroidvania</h3>
+            <p class="text-xs sm:text-sm text-slate-300">
+              Unlike traditional isometric shooters, End of Abyss demands tactical precision: managing limited power cells, aiming at localized carapace fissures, and utilizing Cel's directional thruster dash to evade crushing blows.
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bosses Section -->
+      <BossGrid />
+    </section>
+
+    <!-- Weapons Arsenal Grid -->
+    <WeaponGrid />
+
+    <!-- Chapter Progression Guide Summary -->
+    <section class="hud-card rounded-2xl p-6 sm:p-10 border border-abyss-border space-y-6">
+      <div class="space-y-2 border-b border-abyss-border/60 pb-4">
+        <div class="inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded bg-abyss-emerald/15 border border-abyss-emerald/30 text-abyss-emerald text-xs font-mono font-bold uppercase">
+          <span>🗺️</span>
+          <span>Progression Road</span>
+        </div>
+        <h2 class="text-2xl sm:text-3xl font-black text-white font-mono tracking-tight">
+          Subterranean Sector Progression Map
+        </h2>
+        <p class="text-xs sm:text-sm text-abyss-muted">
+          Follow the canonical exploration sequence to minimize backtracking and ensure you unlock high-tier security clearances.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-4">
+        <div class="p-4 rounded-xl bg-abyss-void/80 border border-abyss-border space-y-2">
+          <span class="text-[10px] font-mono text-abyss-cyan font-bold">SECTOR 01</span>
+          <h3 class="text-sm font-bold text-white font-mono">Level 0: Surface Descent</h3>
+          <p class="text-xs text-abyss-muted">Tutorial infiltration, baseline exosuit calibration, and finding the Plasma Carbine.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-abyss-void/80 border border-abyss-border space-y-2">
+          <span class="text-[10px] font-mono text-abyss-emerald font-bold">SECTOR 02</span>
+          <h3 class="text-sm font-bold text-white font-mono">Level 3: Hydroponic Lab</h3>
+          <p class="text-xs text-abyss-muted">Spore infestation zone. Unlock Thruster Dash and defeat the Hydroponic Matriarch.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-abyss-void/80 border border-abyss-border space-y-2">
+          <span class="text-[10px] font-mono text-abyss-hazard font-bold">SECTOR 03</span>
+          <h3 class="text-sm font-bold text-white font-mono">Level 6: Smelter & Mines</h3>
+          <p class="text-xs text-abyss-muted">Heavy industrial hazard zone. Acquire Heavy Arc Scattergun and Goliath Data Core.</p>
+        </div>
+
+        <div class="p-4 rounded-xl bg-abyss-void/80 border border-abyss-border space-y-2">
+          <span class="text-[10px] font-mono text-abyss-crimson font-bold">SECTOR 04</span>
+          <h3 class="text-sm font-bold text-white font-mono">Level 10: The Abyss Core</h3>
+          <p class="text-xs text-abyss-muted">Zero-G chamber, Singularity Architect boss encounter, and the two branching story endings.</p>
+        </div>
+      </div>
+
+      <div class="text-center pt-2">
+        <a
+          href="/walkthrough/"
+          class="inline-block px-6 py-2.5 rounded-lg bg-slate-800 hover:bg-slate-700 text-abyss-cyan border border-slate-700 hover:border-abyss-cyan text-xs font-mono font-bold transition-all"
+        >
+          View Full Chapter-by-Chapter Walkthrough →
+        </a>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <FAQSection />
+
+  </div>
+</Layout>

@@ -1,0 +1,121 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { faqSchema } from '../data/faqs';
+
+const pageTitle = 'End of Abyss Platforms: PS5, Xbox Series X/S, PC & Nintendo Switch 2';
+const pageDescription = 'Complete platform breakdown for End of Abyss. Compare graphics modes, PS5 DualSense haptics, Xbox performance, PC specs, and Nintendo Switch 2 release rumors.';
+---
+
+<Layout title={pageTitle} description={pageDescription} schema={[faqSchema]}>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    
+    <!-- Hero / Header -->
+    <div class="space-y-4 border-b border-abyss-border pb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-abyss-hazard/15 border border-abyss-hazard/40 text-abyss-hazard text-xs font-mono font-bold tracking-wider uppercase">
+        <span>🎮</span>
+        <span>Hardware & Cross-Platform Specs</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white font-mono tracking-tight">
+        End of Abyss Platform Guide
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed max-w-3xl">
+        Whether you are playing on high-end PC, experiencing adaptive trigger haptics on PlayStation 5, or tracking the anticipated Nintendo Switch 2 launch, here is the complete platform breakdown for <em>End of Abyss</em>.
+      </p>
+    </div>
+
+    <!-- Platform Cards Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      
+      <!-- PlayStation 5 -->
+      <div class="hud-card rounded-2xl p-6 border border-abyss-border space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-white font-mono flex items-center gap-2">
+            <span>🔵</span>
+            <span>PlayStation 5</span>
+          </span>
+          <span class="text-xs font-mono px-2 py-0.5 rounded bg-blue-950 text-blue-400 font-bold">AVAILABLE NOW</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          The PS5 edition of End of Abyss makes extensive use of the DualSense controller. Each weapon has distinctive adaptive trigger resistance (the Arc Shotgun requires a heavy pull with physical kickback), and haptic vibrations convey bio-anomaly footsteps crawling under floor grates.
+        </p>
+        <div class="bg-abyss-void/80 p-3.5 rounded-xl border border-abyss-border space-y-1 text-xs font-mono text-slate-300">
+          <div><strong>Resolution Mode:</strong> Dynamic 4K @ 60 FPS</div>
+          <div><strong>Performance Mode:</strong> 1440p @ 120 Hz Target</div>
+          <div><strong>Audio:</strong> Tempest 3D Audio binaural positional sound</div>
+        </div>
+      </div>
+
+      <!-- Xbox Series X|S -->
+      <div class="hud-card rounded-2xl p-6 border border-abyss-border space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-white font-mono flex items-center gap-2">
+            <span>🟢</span>
+            <span>Xbox Series X | S</span>
+          </span>
+          <span class="text-xs font-mono px-2 py-0.5 rounded bg-emerald-950 text-emerald-400 font-bold">AVAILABLE NOW</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Full support for Quick Resume across subterranean save terminals. The Xbox Series X runs at native 4K with ray-traced ambient occlusion, while the compact Series S targets smooth 1080p 60 FPS with reconstructed lighting.
+        </p>
+        <div class="bg-abyss-void/80 p-3.5 rounded-xl border border-abyss-border space-y-1 text-xs font-mono text-slate-300">
+          <div><strong>Series X:</strong> Native 4K @ 60 FPS / VRR Supported</div>
+          <div><strong>Series S:</strong> Dynamic 1080p @ 60 FPS</div>
+          <div><strong>Features:</strong> Quick Resume & Dolby Atmos spatial audio</div>
+        </div>
+      </div>
+
+      <!-- PC -->
+      <div class="hud-card rounded-2xl p-6 border border-abyss-border space-y-4">
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-white font-mono flex items-center gap-2">
+            <span>💻</span>
+            <span>PC (Epic Games Store)</span>
+          </span>
+          <span class="text-xs font-mono px-2 py-0.5 rounded bg-abyss-cyan/20 text-abyss-cyan font-bold">AVAILABLE NOW</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          The definitive visual showcase powered by Unreal Engine 5. Supports unlocked framerates, ultra-wide 21:9 and 32:9 monitors, NVIDIA DLSS 3.5 Frame Generation, AMD FSR 3, and Intel XeSS.
+        </p>
+        <div class="bg-abyss-void/80 p-3.5 rounded-xl border border-abyss-border space-y-1 text-xs font-mono text-slate-300">
+          <div><strong>Storefront:</strong> Epic Games Store (Steam expected Q4 2027)</div>
+          <div><strong>Controller Support:</strong> DualSense, Xbox Wireless, Mouse & Keyboard</div>
+          <div><strong>Handheld:</strong> Fully verified on Steam Deck (via Heroic Launcher)</div>
+        </div>
+      </div>
+
+      <!-- Nintendo Switch 2 -->
+      <div class="hud-card rounded-2xl p-6 border border-abyss-hazard/40 space-y-4" id="switch-2">
+        <div class="flex items-center justify-between">
+          <span class="text-2xl font-bold text-white font-mono flex items-center gap-2">
+            <span>🔴</span>
+            <span>Nintendo Switch 2</span>
+          </span>
+          <span class="text-xs font-mono px-2 py-0.5 rounded bg-amber-950 text-amber-400 font-bold">IN DEVELOPMENT</span>
+        </div>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Industry reports indicate that Section 9 Interactive received next-generation Nintendo development kits in early 2026. Given the Metroidvania structure and handheld appeal, an official announcement is expected alongside Nintendo's console hardware reveal.
+        </p>
+        <div class="bg-abyss-void/80 p-3.5 rounded-xl border border-abyss-border space-y-1 text-xs font-mono text-slate-300">
+          <div><strong>Status:</strong> Unannounced / In Active Development</div>
+          <div><strong>Target Performance:</strong> 1080p Handheld (DLSS Reconstructed) / 60 FPS</div>
+          <div><strong>Estimated Release:</strong> 2027</div>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Tech Visual Banner -->
+    <div class="rounded-2xl overflow-hidden border border-abyss-border">
+      <img
+        src="/images/platforms-tech.jpg"
+        alt="End of Abyss System Specs and Tech Architecture"
+        class="w-full h-auto object-cover"
+      />
+    </div>
+
+    <!-- FAQ -->
+    <FAQSection />
+
+  </div>
+</Layout>

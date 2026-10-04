@@ -1,0 +1,125 @@
+---
+import Layout from '../layouts/Layout.astro';
+import BossGrid from '../components/BossGrid.astro';
+import WeaponGrid from '../components/WeaponGrid.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { faqSchema } from '../data/faqs';
+
+const pageTitle = 'End of Abyss Walkthrough – Full Chapter Guide, Boss Tactics & Cel Upgrades';
+const pageDescription = 'Complete 100% walkthrough for End of Abyss. Master Cel\'s combat exosuit upgrades, discover all 8 Section 9 Data Cores, defeat every biomechanical boss anomaly, and unlock the true ending.';
+---
+
+<Layout title={pageTitle} description={pageDescription} schema={[faqSchema]}>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    
+    <!-- Hero / Header -->
+    <div class="space-y-4 border-b border-abyss-border pb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-abyss-cyan/15 border border-abyss-cyan/40 text-abyss-cyan text-xs font-mono font-bold tracking-wider uppercase">
+        <span>🗺️</span>
+        <span>Tactical Operations Manual</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white font-mono tracking-tight">
+        End of Abyss Walkthrough & Field Guide
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed max-w-3xl">
+        A step-by-step navigational briefing for combat technician <strong class="text-white">Cel</strong> across all subterranean sectors. Follow this guide to locate weapon upgrades, survive brutal boss encounters, and collect all 8 Data Cores for the true ending.
+      </p>
+    </div>
+
+    <!-- Chapter by Chapter Breakdown -->
+    <section class="space-y-8">
+      <h2 class="text-2xl font-bold text-white font-mono">Chapter-by-Chapter Mission Log</h2>
+
+      <!-- Chapter 1 -->
+      <div class="hud-card rounded-xl p-6 border border-abyss-border space-y-4">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <span class="text-xs font-mono text-abyss-cyan font-bold">CHAPTER 01</span>
+          <span class="text-xs font-mono px-2 py-0.5 rounded bg-abyss-dark text-slate-400">Sector Alpha • Depth: -150m</span>
+        </div>
+        <h3 class="text-xl font-bold text-white font-mono">Level 0: Surface Descent & Elevator Failure</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          Cel enters the primary atmospheric airlock of the Section 9 underground biome. Following a catastrophic elevator cable collapse, you are cut off from surface extraction. 
+        </p>
+        <div class="bg-abyss-void/80 p-4 rounded-lg border border-abyss-border space-y-2 text-xs font-mono text-slate-300">
+          <div class="text-abyss-hazard font-bold">Key Objectives:</div>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Retrieve Cel's primary <strong>Tactical Plasma Carbine</strong> from the Security Armory.</li>
+            <li>Reroute emergency power to the hydraulic bulkhead door.</li>
+            <li>Find <strong>Data Core #1 (Aether Memo 04)</strong> tucked behind the generator vent.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Chapter 2 -->
+      <div class="hud-card rounded-xl p-6 border border-abyss-border space-y-4">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <span class="text-xs font-mono text-abyss-emerald font-bold">CHAPTER 02</span>
+          <span class="text-xs font-mono px-2 py-0.5 rounded bg-abyss-dark text-slate-400">Sector Beta • Depth: -420m</span>
+        </div>
+        <h3 class="text-xl font-bold text-white font-mono">Level 3: The Hydroponic Bio-Dome Overgrowth</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          A lush yet deadly botanical garden engineered for deep-earth oxygen regeneration, now overgrown with mutagenic spores. Visibility is severely reduced; listen closely for chitinous audio cues.
+        </p>
+        <div class="bg-abyss-void/80 p-4 rounded-lg border border-abyss-border space-y-2 text-xs font-mono text-slate-300">
+          <div class="text-abyss-hazard font-bold">Key Objectives & Gear:</div>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Acquire the <strong>Directional Thruster Dash</strong> module from the Botanical Research Lab.</li>
+            <li>Boss Fight: <strong>The Hydroponic Matriarch</strong>. Focus fire on her glowing floral core when she channels spore clouds.</li>
+            <li>Collect <strong>Data Core #2 & #3</strong> in the water treatment filtration vaults.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Chapter 3 -->
+      <div class="hud-card rounded-xl p-6 border border-abyss-border space-y-4">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <span class="text-xs font-mono text-abyss-hazard font-bold">CHAPTER 03</span>
+          <span class="text-xs font-mono px-2 py-0.5 rounded bg-abyss-dark text-slate-400">Sector Gamma • Depth: -890m</span>
+        </div>
+        <h3 class="text-xl font-bold text-white font-mono">Level 6: Geothermal Smelter & Machine Graveyard</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          The facility's power core. Narrow suspended metal catwalks over molten slag pits. Enemy types here feature heavy ballistic shielding and flamethrower appendages.
+        </p>
+        <div class="bg-abyss-void/80 p-4 rounded-lg border border-abyss-border space-y-2 text-xs font-mono text-slate-300">
+          <div class="text-abyss-hazard font-bold">Key Objectives & Gear:</div>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Obtain the <strong>Heavy Arc Scattergun</strong> inside the automated manufacturing foundry.</li>
+            <li>Boss Fight: <strong>Goliath Sub-Anomaly 04</strong>. Bait his ground slam to expose rear cooling valves, then unload point-blank shotgun blasts.</li>
+            <li>Unlock Security Tier 3 Clearance to open previous fast-travel transit cars.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Chapter 4 -->
+      <div class="hud-card rounded-xl p-6 border border-abyss-border space-y-4">
+        <div class="flex items-center justify-between flex-wrap gap-2">
+          <span class="text-xs font-mono text-abyss-crimson font-bold">CHAPTER 04</span>
+          <span class="text-xs font-mono px-2 py-0.5 rounded bg-abyss-dark text-slate-400">Sector Omega • Depth: -1500m</span>
+        </div>
+        <h3 class="text-xl font-bold text-white font-mono">Level 10: The Abyss Core & Singularity Gate</h3>
+        <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+          The deepest point of the facility where biological matter and quantum computational architecture merge into a singular bio-digital consciousness.
+        </p>
+        <div class="bg-abyss-void/80 p-4 rounded-lg border border-abyss-border space-y-2 text-xs font-mono text-slate-300">
+          <div class="text-abyss-hazard font-bold">Final Climax:</div>
+          <ul class="list-disc list-inside space-y-1">
+            <li>Equip the <strong>Mag-Pulse Rail Cannon</strong>.</li>
+            <li>Final Boss: <strong>The Deep Core Architect</strong>. Survive three intense bullet-hell phases while switching platforms.</li>
+            <li>Decide whether to initiate the Self-Destruct protocol (Ending A) or Upload the Data Cores (True Ending B).</li>
+          </ul>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- Boss Guide Section -->
+    <BossGrid />
+
+    <!-- Weapons Loadout -->
+    <WeaponGrid />
+
+    <!-- FAQ -->
+    <FAQSection />
+
+  </div>
+</Layout>

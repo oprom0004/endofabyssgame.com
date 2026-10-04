@@ -1,0 +1,79 @@
+---
+const currentYear = new Date().getFullYear();
+---
+
+<footer class="border-t border-abyss-border/70 bg-[#030508] mt-24 text-slate-400">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+      
+      <!-- Brand column -->
+      <div class="space-y-4 md:col-span-1">
+        <div class="flex items-center gap-2.5">
+          <div class="w-8 h-8 rounded-lg bg-abyss-cyan/10 border border-abyss-cyan/40 flex items-center justify-center">
+            <svg class="w-4 h-4 text-abyss-cyan" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polygon points="12,2 22,8 22,16 12,22 2,16 2,8" />
+            </svg>
+          </div>
+          <span class="font-mono font-extrabold text-white text-base">End Of Abyss<span class="text-abyss-cyan">.com</span></span>
+        </div>
+        <p class="text-xs text-abyss-muted leading-relaxed">
+          The comprehensive fan database and tactical survival guide for Section 9 Interactive's sci-fi action horror title <em>End of Abyss</em>.
+        </p>
+        <div class="text-[11px] font-mono text-slate-500">
+          Status: <span class="text-abyss-cyan font-bold">Facility Sector Sync: 100% ●</span>
+        </div>
+      </div>
+
+      <!-- Quick Game Guides -->
+      <div>
+        <h3 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-abyss-cyan pl-2">
+          Game Guides
+        </h3>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/walkthrough/" class="hover:text-abyss-cyan transition-colors">Sector Walkthrough & Levels</a></li>
+          <li><a href="/walkthrough/#bosses" class="hover:text-abyss-cyan transition-colors">Boss Anomaly Tactics</a></li>
+          <li><a href="/walkthrough/#cel-upgrades" class="hover:text-abyss-cyan transition-colors">Cel Exosuit Upgrade Tree</a></li>
+          <li><a href="/ending-explained/" class="hover:text-abyss-cyan transition-colors">Secret Ending & Lore Truth</a></li>
+        </ul>
+      </div>
+
+      <!-- Platforms & Tech -->
+      <div>
+        <h3 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-abyss-hazard pl-2">
+          Platforms & Release
+        </h3>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/steam/" class="hover:text-abyss-hazard transition-colors">Steam Release Date & Window</a></li>
+          <li><a href="/steam/#steam-deck" class="hover:text-abyss-hazard transition-colors">Steam Deck Setup Guide</a></li>
+          <li><a href="/platforms/" class="hover:text-abyss-hazard transition-colors">PS5 DualSense & 120Hz Mode</a></li>
+          <li><a href="/platforms/#switch-2" class="hover:text-abyss-hazard transition-colors">Nintendo Switch 2 Rumors</a></li>
+        </ul>
+      </div>
+
+      <!-- Legal & Disclaimer -->
+      <div>
+        <h3 class="text-xs font-mono font-bold text-white uppercase tracking-wider mb-4 border-l-2 border-slate-600 pl-2">
+          Community & Info
+        </h3>
+        <ul class="space-y-2 text-xs">
+          <li><a href="/coop/" class="hover:text-white transition-colors">Co-op & Multiplayer Status</a></li>
+          <li><a href="/privacy/" class="hover:text-white transition-colors">Privacy Policy</a></li>
+          <li><a href="/terms/" class="hover:text-white transition-colors">Terms of Service</a></li>
+          <li class="pt-2 text-slate-500 font-mono text-[11px]">Contact: contact@endofabyssgame.com</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="pt-8 border-t border-abyss-border/60 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-slate-500 font-mono">
+      <p>© {currentYear} EndOfAbyssGame.com. Unofficial community guide. All game trademarks and copyrights belong to Section 9 Interactive & Epic Games.</p>
+      <div class="flex items-center gap-4">
+        <span>Unreal Engine 5</span>
+        <span>•</span>
+        <span>Metroidvania Hub</span>
+        <span>•</span>
+        <span>Twin-Stick Survival</span>
+      </div>
+    </div>
+  </div>
+</footer>

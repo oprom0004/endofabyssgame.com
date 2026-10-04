@@ -1,0 +1,137 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { faqSchema } from '../data/faqs';
+
+const pageTitle = 'Will End of Abyss Be on Steam? PC Release Date, Exclusivity & Steam Deck Guide';
+const pageDescription = 'Everything you need to know about End of Abyss on Steam. Learn about the Epic Games Store timed exclusivity, expected Steam release window (2027), and how to play on Steam Deck today.';
+---
+
+<Layout title={pageTitle} description={pageDescription} schema={[faqSchema]}>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    
+    <!-- Hero / Header -->
+    <div class="space-y-4 border-b border-abyss-border pb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-abyss-hazard/15 border border-abyss-hazard/40 text-abyss-hazard text-xs font-mono font-bold tracking-wider uppercase">
+        <span>🎮</span>
+        <span>PC Platform & Steam Intelligence</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white font-mono tracking-tight">
+        Will End of Abyss Be on Steam?
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed max-w-3xl">
+        Following the October 1, 2026 launch of Section 9 Interactive's survival horror title, PC players have been asking whether <em>End of Abyss</em> will arrive on Valve's Steam platform. Here is the verified breakdown of publisher exclusivity, estimated Steam launch dates, and how to play on Steam Deck right now.
+      </p>
+    </div>
+
+    <!-- Key Takeaway Box -->
+    <div class="hud-card rounded-2xl p-6 sm:p-8 border border-abyss-cyan/50 space-y-4 shadow-glow-cyan">
+      <div class="flex items-center gap-3">
+        <span class="text-2xl">⚡</span>
+        <h2 class="text-lg font-bold text-white font-mono uppercase tracking-wide">
+          Quick Answer: End of Abyss Steam Status
+        </h2>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-4 pt-2 text-xs font-mono">
+        <div class="p-3.5 rounded-xl bg-abyss-void/90 border border-abyss-border">
+          <span class="text-abyss-muted block text-[10px] uppercase">Current PC Store</span>
+          <span class="text-white font-bold text-sm">Epic Games Store (Exclusive)</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-abyss-void/90 border border-abyss-border">
+          <span class="text-abyss-muted block text-[10px] uppercase">Exclusivity Period</span>
+          <span class="text-abyss-hazard font-bold text-sm">12 Months (Timed)</span>
+        </div>
+        <div class="p-3.5 rounded-xl bg-abyss-void/90 border border-abyss-border">
+          <span class="text-abyss-muted block text-[10px] uppercase">Estimated Steam Release</span>
+          <span class="text-abyss-cyan font-bold text-sm">Q4 2027 (Expected)</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Deep Dive Article Content -->
+    <article class="space-y-8 text-sm text-slate-300 leading-relaxed">
+      
+      <section class="space-y-3">
+        <h2 class="text-2xl font-bold text-white font-mono">Why Isn't End of Abyss on Steam at Launch?</h2>
+        <p>
+          <em>End of Abyss</em> is published by <strong>Epic Games Publishing</strong>. Under Epic's standard publishing agreements, Epic provides development funding, QA, and global localization in exchange for launch exclusivity on the Epic Games Store (EGS).
+        </p>
+        <p>
+          Similar to past Epic-published titles like <em>Alan Wake 2</em>, <em>Sifu</em>, and <em>Ghostrunner 2</em>, PC availability starts exclusively on the Epic Games Store. Typically, third-party agreements allow for Steam releases once the contractual 12-month exclusivity window concludes.
+        </p>
+      </section>
+
+      <!-- Steam Deck Guide -->
+      <section class="hud-card rounded-2xl p-6 sm:p-8 border border-abyss-border space-y-4" id="steam-deck">
+        <div class="flex items-center gap-2">
+          <span class="text-2xl">🕹️</span>
+          <h2 class="text-xl font-bold text-white font-mono">How to Play End of Abyss on Steam Deck (Today)</h2>
+        </div>
+        <p class="text-xs text-abyss-muted">
+          You do not need to wait for a native Steam store page to enjoy <em>End of Abyss</em> on Valve's portable handheld. Follow these quick steps to run the Epic Games Store build smoothly on SteamOS:
+        </p>
+        
+        <ol class="space-y-3 list-decimal list-inside text-xs font-mono text-slate-300 bg-abyss-void/80 p-5 rounded-xl border border-abyss-border">
+          <li><strong>Switch to Desktop Mode:</strong> Press the physical Steam button on your Deck ➔ Power ➔ Switch to Desktop.</li>
+          <li><strong>Install Heroic Games Launcher:</strong> Open the "Discover" Software Center, search for <em>Heroic Games Launcher</em>, and click Install.</li>
+          <li><strong>Log in to Epic Games:</strong> Launch Heroic, log into your Epic Games account, and find <em>End of Abyss</em> in your library.</li>
+          <li><strong>Install & Set Proton Version:</strong> Click Install, then under Game Settings, select <strong>Proton GE 9-x</strong> for optimal shader compilation.</li>
+          <li><strong>Add to Steam:</strong> In Heroic, click "Add to Steam". Return to Gaming Mode, and launch the game directly from your Steam library with full gamepad controls!</li>
+        </ol>
+      </section>
+
+      <!-- PC System Requirements Table -->
+      <section class="space-y-4">
+        <h2 class="text-2xl font-bold text-white font-mono">PC Hardware & System Requirements</h2>
+        <div class="overflow-x-auto">
+          <table class="w-full text-left text-xs font-mono border border-abyss-border rounded-xl overflow-hidden">
+            <thead class="bg-abyss-card text-abyss-cyan">
+              <tr>
+                <th class="p-3 border-b border-abyss-border">Component</th>
+                <th class="p-3 border-b border-abyss-border">Minimum Requirements (1080p @ 30 FPS)</th>
+                <th class="p-3 border-b border-abyss-border">Recommended Requirements (1440p @ 60 FPS)</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-abyss-border bg-abyss-void/60 text-slate-300">
+              <tr>
+                <td class="p-3 font-bold text-white">OS</td>
+                <td class="p-3">Windows 10 / 11 (64-bit)</td>
+                <td class="p-3">Windows 11 (64-bit)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-white">Processor</td>
+                <td class="p-3">Intel Core i5-8400 or AMD Ryzen 5 2600</td>
+                <td class="p-3">Intel Core i7-10700K or AMD Ryzen 7 5800X</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-white">Memory</td>
+                <td class="p-3">12 GB RAM</td>
+                <td class="p-3">16 GB RAM Dual-Channel</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-white">Graphics</td>
+                <td class="p-3">NVIDIA GeForce GTX 1660 Super (6GB) or AMD Radeon RX 5600 XT</td>
+                <td class="p-3">NVIDIA GeForce RTX 3070 (8GB) or AMD Radeon RX 6750 XT</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-white">DirectX</td>
+                <td class="p-3">Version 12</td>
+                <td class="p-3">Version 12 (DirectX Ultimate)</td>
+              </tr>
+              <tr>
+                <td class="p-3 font-bold text-white">Storage</td>
+                <td class="p-3">35 GB available space (SSD Recommended)</td>
+                <td class="p-3">35 GB NVMe M.2 SSD (Required for fast asset streaming)</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+    </article>
+
+    <!-- FAQ -->
+    <FAQSection />
+
+  </div>
+</Layout>
