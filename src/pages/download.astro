@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+import FAQSection from '../components/FAQSection.astro';
+import { faqSchema } from '../data/faqs';
+
+const pageTitle = 'End of Abyss Download – Official PC (Epic Store), PS5 & Xbox Storefronts (2026)';
+const pageDescription = 'Find official download links and digital storefronts for End of Abyss. Compare PC Epic Games Store, PlayStation 5, Xbox Series X/S editions, and PC system specs.';
+
+const downloadStores = [
+  {
+    platform: 'PC (Windows)',
+    storeName: 'Epic Games Store',
+    badge: 'PC Exclusive (Timed)',
+    price: '$29.99',
+    icon: '💻',
+    officialUrl: 'https://store.epicgames.com/',
+    highlights: [
+      'Official PC launch platform (Published by Epic Games)',
+      'Unreal Engine 5 with NVIDIA DLSS 3.5 & AMD FSR 3',
+      'Playable on Steam Deck via Heroic Games Launcher',
+    ],
+    ctaText: 'Get on Epic Games Store ↗',
+    color: 'from-abyss-cyan to-blue-600',
+    textColor: 'text-black',
+  },
+  {
+    platform: 'PlayStation 5',
+    storeName: 'PlayStation Store',
+    badge: 'Console Edition',
+    price: '$29.99',
+    icon: '🔵',
+    officialUrl: 'https://store.playstation.com/',
+    highlights: [
+      'Full DualSense adaptive trigger & haptic feedback',
+      'Target Dynamic 4K @ 60 FPS or 1440p @ 120 Hz Mode',
+      'Tempest 3D Audio positional sound',
+    ],
+    ctaText: 'View on PlayStation Store ↗',
+    color: 'from-blue-600 to-blue-800',
+    textColor: 'text-white',
+  },
+  {
+    platform: 'Xbox Series X | S',
+    storeName: 'Xbox / Microsoft Store',
+    badge: 'Console Edition',
+    price: '$29.99',
+    icon: '🟢',
+    officialUrl: 'https://www.xbox.com/games/store/',
+    highlights: [
+      'Xbox Series X native 4K 60 FPS with ray-traced shadows',
+      'Quick Resume support across save terminals',
+      'Spatial Dolby Atmos audio support',
+    ],
+    ctaText: 'View on Xbox Store ↗',
+    color: 'from-emerald-600 to-teal-800',
+    textColor: 'text-white',
+  },
+  {
+    platform: 'Valve Steam (PC)',
+    storeName: 'Steam Store',
+    badge: 'Expected Q4 2027',
+    price: 'TBD',
+    icon: '🎮',
+    officialUrl: '/steam/',
+    highlights: [
+      'Under 12-month Epic Games timed exclusivity window',
+      'Expected to launch on Steam after exclusivity expires in 2027',
+      'Steam Deck players can play now via Heroic Launcher',
+    ],
+    ctaText: 'Read Steam & Deck Guide →',
+    color: 'from-slate-700 to-slate-900',
+    textColor: 'text-slate-200',
+  },
+];
+---
+
+<Layout title={pageTitle} description={pageDescription} schema={[faqSchema]}>
+  <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 space-y-12">
+    
+    <!-- Hero Header -->
+    <div class="space-y-4 border-b border-abyss-border pb-8">
+      <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-abyss-cyan/15 border border-abyss-cyan/40 text-abyss-cyan text-xs font-mono font-bold tracking-wider uppercase">
+        <span>📥</span>
+        <span>Official Download &amp; Storefronts</span>
+      </div>
+      <h1 class="text-3xl sm:text-5xl font-black text-white font-mono tracking-tight">
+        Download End of Abyss
+      </h1>
+      <p class="text-base text-slate-300 leading-relaxed max-w-3xl">
+        Released on October 1, 2026. <em>End of Abyss</em> is currently available digitally on PC via the Epic Games Store, PlayStation 5, and Xbox Series X/S. Find authorized official storefront links and hardware requirements below:
+      </p>
+    </div>
+
+    <!-- Storefront Cards Grid -->
+    <section class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {downloadStores.map((item) => (
+        <div class="hud-card rounded-2xl p-6 sm:p-8 border border-abyss-border flex flex-col justify-between space-y-6 hover:border-abyss-cyan/50 transition-all">
+          <div class="space-y-4">
+            <div class="flex items-center justify-between">
+              <span class="text-xs font-mono px-2.5 py-0.5 rounded-full bg-abyss-void border border-abyss-border text-abyss-cyan font-bold">
+                {item.badge}
+              </span>
+              <span class="font-mono font-bold text-white text-sm">{item.price}</span>
+            </div>
+
+            <div class="flex items-center gap-3">
+              <span class="text-3xl">{item.icon}</span>
+              <div>
+                <h2 class="font-mono font-bold text-xl text-white">{item.platform}</h2>
+                <span class="text-xs text-abyss-muted font-sans">{item.storeName}</span>
+              </div>
+            </div>
+
+            <ul class="space-y-2 text-xs text-slate-300 font-sans border-t border-abyss-border/60 pt-4">
+              {item.highlights.map((h) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-abyss-cyan">✓</span>
+                  <span>{h}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div class="pt-2">
+            <a
+              href={item.officialUrl}
+              target={item.officialUrl.startsWith('http') ? '_blank' : '_self'}
+              rel={item.officialUrl.startsWith('http') ? 'noopener noreferrer' : undefined}
+              class={`w-full py-3 px-4 rounded-xl bg-gradient-to-r ${item.color} ${item.textColor} font-mono font-bold text-xs uppercase tracking-wider text-center block shadow-lg hover:brightness-110 transition-all`}
+            >
+              <span>{item.ctaText}</span>
+            </a>
+            {item.officialUrl.startsWith('http') && (
+              <span class="block text-center text-[10px] text-abyss-muted font-mono mt-1.5">
+                Official Publisher / Platform Storefront
+              </span>
+            )}
+          </div>
+        </div>
+      ))}
+    </section>
+
+    <!-- PC System Requirements -->
+    <section class="space-y-4">
+      <h2 class="text-2xl font-bold text-white font-mono">PC Hardware &amp; System Requirements</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left text-xs font-mono border border-abyss-border rounded-xl overflow-hidden">
+          <thead class="bg-abyss-card text-abyss-cyan">
+            <tr>
+              <th class="p-3 border-b border-abyss-border">Component</th>
+              <th class="p-3 border-b border-abyss-border">Minimum (1080p @ 30 FPS)</th>
+              <th class="p-3 border-b border-abyss-border">Recommended (1440p @ 60 FPS)</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y divide-abyss-border bg-abyss-void/60 text-slate-300">
+            <tr>
+              <td class="p-3 font-bold text-white">OS</td>
+              <td class="p-3">Windows 10 / 11 (64-bit)</td>
+              <td class="p-3">Windows 11 (64-bit)</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">Processor</td>
+              <td class="p-3">Intel Core i5-8400 or AMD Ryzen 5 2600</td>
+              <td class="p-3">Intel Core i7-10700K or AMD Ryzen 7 5800X</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">Memory</td>
+              <td class="p-3">12 GB RAM</td>
+              <td class="p-3">16 GB RAM Dual-Channel</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">Graphics</td>
+              <td class="p-3">NVIDIA GeForce GTX 1660 Super (6GB) / RX 5600 XT</td>
+              <td class="p-3">NVIDIA GeForce RTX 3070 (8GB) / RX 6750 XT</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">DirectX</td>
+              <td class="p-3">Version 12</td>
+              <td class="p-3">Version 12 (DirectX Ultimate)</td>
+            </tr>
+            <tr>
+              <td class="p-3 font-bold text-white">Storage</td>
+              <td class="p-3">35 GB SSD available space</td>
+              <td class="p-3">35 GB NVMe M.2 SSD (Fast streaming)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <FAQSection />
+
+  </div>
+</Layout>
