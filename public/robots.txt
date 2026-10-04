@@ -1,4 +1,5 @@
 User-agent: *
 Allow: /
 
+Sitemap: https://endofabyssgame.com/sitemap.xml
 Sitemap: https://endofabyssgame.com/sitemap-index.xml
