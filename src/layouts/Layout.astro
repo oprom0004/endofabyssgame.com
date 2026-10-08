@@ -62,7 +62,8 @@ const {
     {schema.map((item) => (
       <script type="application/ld+json" set:html={JSON.stringify(item)} />
     ))}
-  </head>
+    <script is:inline defer src="/_site-analytics.js"></script>
+</head>
   <body class="min-h-screen flex flex-col font-sans bg-abyss-void text-slate-100 antialiased selection:bg-abyss-cyan selection:text-black">
     <Navbar />
     <main class="flex-grow">
